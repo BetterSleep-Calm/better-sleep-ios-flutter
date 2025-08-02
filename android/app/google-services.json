@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "516814486915",
+    "project_id": "sleep-app-4ec19",
+    "storage_bucket": "sleep-app-4ec19.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516814486915:android:36f80394e9e14e1d074ab6",
+        "android_client_info": {
+          "package_name": "com.fastasleep.bettersleep"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEEpp0EDppFm_WkwnA3Piq4tPx7ON8oGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
