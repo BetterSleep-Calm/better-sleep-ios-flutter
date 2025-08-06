@@ -174,13 +174,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'InfoScreen')
               : InfoScreenWidget(),
-        ),
-        FFRoute(
-          name: Countdown11TESTWidget.routeName,
-          path: Countdown11TESTWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Countdown11TEST')
-              : Countdown11TESTWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

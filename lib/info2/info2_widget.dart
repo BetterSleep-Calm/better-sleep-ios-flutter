@@ -71,7 +71,7 @@ class _Info2WidgetState extends State<Info2Widget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,12 +106,13 @@ class _Info2WidgetState extends State<Info2Widget> {
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Container(
                       width: 350.0,
+                      height: 230.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: FlutterFlowVideoPlayer(
                         path:
-                            'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/Clouds.m4v?alt=media&token=b2e56aa8-e009-4214-a465-85721ad28f5f',
+                            'https://sleep-app-4ec19.web.app/videos/clouds.mp4',
                         videoType: VideoType.network,
                         width: double.infinity,
                         height: double.infinity,

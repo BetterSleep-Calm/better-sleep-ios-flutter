@@ -297,6 +297,7 @@ class _Feedback12WidgetState extends State<Feedback12Widget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -305,7 +306,7 @@ class _Feedback12WidgetState extends State<Feedback12Widget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
                           maxLength: 2,
                           maxLengthEnforcement: MaxLengthEnforcement.enforced,
                           buildCounter: (context,
@@ -448,6 +449,7 @@ class _Feedback12WidgetState extends State<Feedback12Widget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 10.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -456,7 +458,7 @@ class _Feedback12WidgetState extends State<Feedback12Widget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
                           maxLength: 2,
                           maxLengthEnforcement: MaxLengthEnforcement.enforced,
                           buildCounter: (context,

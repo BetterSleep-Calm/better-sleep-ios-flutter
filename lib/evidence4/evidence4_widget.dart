@@ -72,7 +72,7 @@ class _Evidence4WidgetState extends State<Evidence4Widget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
@@ -173,6 +173,7 @@ class _Evidence4WidgetState extends State<Evidence4Widget> {
               ),
               Container(
                 width: 200.0,
+                height: 186.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -180,10 +181,8 @@ class _Evidence4WidgetState extends State<Evidence4Widget> {
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: FlutterFlowVideoPlayer(
                     path:
-                        'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/clock.m4v?alt=media&token=5e5d96ad-7af8-430b-89a8-48ff108e027b',
+                        'https://sleep-app-4ec19.web.app/videos/clockvideo.mp4',
                     videoType: VideoType.network,
-                    width: double.infinity,
-                    height: double.infinity,
                     autoPlay: true,
                     looping: true,
                     showControls: false,

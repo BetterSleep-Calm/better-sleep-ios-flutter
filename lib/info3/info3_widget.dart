@@ -105,26 +105,23 @@ class _Info3WidgetState extends State<Info3Widget> {
                   ),
                 ),
               ),
-              Container(
-                width: 350.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: FlutterFlowVideoPlayer(
-                  path:
-                      'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/Circles.m4v?alt=media&token=6b848732-94fe-42a8-9564-a13a4999bb1e',
-                  videoType: VideoType.network,
-                  autoPlay: true,
-                  looping: true,
-                  showControls: false,
-                  allowFullScreen: true,
-                  allowPlaybackSpeedMenu: false,
-                ),
-              ),
               Flexible(
                 child: Container(
+                  width: 220.0,
+                  height: 220.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: FlutterFlowVideoPlayer(
+                    path: 'https://sleep-app-4ec19.web.app/videos/circle.mp4',
+                    videoType: VideoType.network,
+                    width: double.infinity,
+                    height: double.infinity,
+                    autoPlay: true,
+                    looping: true,
+                    showControls: false,
+                    allowFullScreen: true,
+                    allowPlaybackSpeedMenu: false,
                   ),
                 ),
               ),
@@ -132,6 +129,8 @@ class _Info3WidgetState extends State<Info3Widget> {
                 child: Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),

@@ -47,26 +47,37 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Container(
-              width: 300.0,
-              height: 70.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                shape: BoxShape.rectangle,
-              ),
+      body: SafeArea(
+        top: true,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Align(
               alignment: AlignmentDirectional(0.0, 0.0),
-              child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
-                child: Text(
-                  'Settings',
-                  style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        font: GoogleFonts.playfairDisplay(
+              child: Container(
+                width: 300.0,
+                height: 70.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  shape: BoxShape.rectangle,
+                ),
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, -1.0),
+                  child: Text(
+                    'Settings',
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          font: GoogleFonts.playfairDisplay(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .fontStyle,
+                          ),
+                          letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .fontWeight,
@@ -74,101 +85,101 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                               .headlineLarge
                               .fontStyle,
                         ),
+                  ),
+                ),
+              ),
+            ),
+            FFButtonWidget(
+              onPressed: () async {
+                await launchURL(
+                    'https://apps.apple.com/us/app/better-sleep-calm-kids/id6747970716?platform=iphone');
+              },
+              text: 'Leave a Review',
+              options: FFButtonOptions(
+                width: 300.0,
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).tertiary,
+                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                      font: GoogleFonts.poppins(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                    ),
+                elevation: 0.0,
+                borderSide: BorderSide(
+                  color: FlutterFlowTheme.of(context).accent2,
+                ),
+                borderRadius: BorderRadius.circular(24.0),
+              ),
+            ),
+            Builder(
+              builder: (context) => FFButtonWidget(
+                onPressed: () async {
+                  await Share.share(
+                    'Check out this app I’m using – it’s brilliant! Download it here: https://apps.apple.com/app/id674797071',
+                    sharePositionOrigin: getWidgetBoundingBox(context),
+                  );
+                },
+                text: 'Share the Love',
+                options: FFButtonOptions(
+                  width: 300.0,
+                  height: 40.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                        font: GoogleFonts.poppins(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
-                        fontWeight: FlutterFlowTheme.of(context)
-                            .headlineLarge
-                            .fontWeight,
-                        fontStyle: FlutterFlowTheme.of(context)
-                            .headlineLarge
-                            .fontStyle,
-                      ),
-                ),
-              ),
-            ),
-          ),
-          Builder(
-            builder: (context) => FFButtonWidget(
-              onPressed: () async {
-                await Share.share(
-                  'https://www.apple.com/au/app-store/',
-                  sharePositionOrigin: getWidgetBoundingBox(context),
-                );
-              },
-              text: 'Submit a Review',
-              options: FFButtonOptions(
-                width: 300.0,
-                height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).tertiary,
-                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                      font: GoogleFonts.poppins(
                         fontWeight:
                             FlutterFlowTheme.of(context).titleMedium.fontWeight,
                         fontStyle:
                             FlutterFlowTheme.of(context).titleMedium.fontStyle,
                       ),
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
-                elevation: 0.0,
-                borderSide: BorderSide(
-                  color: FlutterFlowTheme.of(context).accent2,
+                  elevation: 0.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).accent2,
+                  ),
+                  borderRadius: BorderRadius.circular(24.0),
                 ),
-                borderRadius: BorderRadius.circular(24.0),
               ),
             ),
-          ),
-          Builder(
-            builder: (context) => FFButtonWidget(
+            FFButtonWidget(
               onPressed: () async {
-                await Share.share(
-                  'Check out this app I’m using – it’s brilliant! Download it here: https://example.com',
-                  sharePositionOrigin: getWidgetBoundingBox(context),
-                );
-              },
-              text: 'Share the Love',
-              options: FFButtonOptions(
-                width: 300.0,
-                height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).tertiary,
-                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                      font: GoogleFonts.poppins(
-                        fontWeight:
-                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                      ),
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
-                elevation: 0.0,
-                borderSide: BorderSide(
-                  color: FlutterFlowTheme.of(context).accent2,
-                ),
-                borderRadius: BorderRadius.circular(24.0),
-              ),
-            ),
-          ),
-          FFButtonWidget(
-            onPressed: () async {
-              ScaffoldMessenger.of(context).clearSnackBars();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    'New Feature - Coming Soon!',
-                    style: FlutterFlowTheme.of(context).labelLarge.override(
-                          font: GoogleFonts.poppins(
+                ScaffoldMessenger.of(context).clearSnackBars();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      'New Feature - Coming Soon!',
+                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                            font: GoogleFonts.poppins(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .fontStyle,
+                            ),
+                            color: FlutterFlowTheme.of(context).tertiary,
+                            letterSpacing: 0.0,
                             fontWeight: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .fontWeight,
@@ -176,122 +187,47 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                                 .labelLarge
                                 .fontStyle,
                           ),
-                          color: FlutterFlowTheme.of(context).tertiary,
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelLarge
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                        ),
+                      textAlign: TextAlign.center,
+                    ),
+                    duration: Duration(milliseconds: 1000),
+                    backgroundColor: FlutterFlowTheme.of(context).alternate,
                   ),
-                  duration: Duration(milliseconds: 1000),
-                  backgroundColor: FlutterFlowTheme.of(context).alternate,
+                );
+              },
+              text: 'Change Voice',
+              options: FFButtonOptions(
+                width: 300.0,
+                height: 40.0,
+                padding: EdgeInsets.all(0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).tertiary,
+                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                      font: GoogleFonts.poppins(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                    ),
+                elevation: 0.0,
+                borderSide: BorderSide(
+                  color: FlutterFlowTheme.of(context).accent2,
                 ),
-              );
-            },
-            text: 'Change Voice',
-            options: FFButtonOptions(
-              width: 300.0,
-              height: 40.0,
-              padding: EdgeInsets.all(0.0),
-              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: FlutterFlowTheme.of(context).tertiary,
-              textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                    font: GoogleFonts.poppins(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                  ),
-              elevation: 0.0,
-              borderSide: BorderSide(
-                color: FlutterFlowTheme.of(context).accent2,
+                borderRadius: BorderRadius.circular(24.0),
               ),
-              borderRadius: BorderRadius.circular(24.0),
             ),
-          ),
-          FFButtonWidget(
-            onPressed: () async {
-              await launchURL(
-                  'mailto:opshopapp@egmail.com?subject=Savi%20Support%20Request');
-            },
-            text: 'Contact Us',
-            options: FFButtonOptions(
-              width: 300.0,
-              height: 40.0,
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: FlutterFlowTheme.of(context).tertiary,
-              textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                    font: GoogleFonts.poppins(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                  ),
-              elevation: 0.0,
-              borderSide: BorderSide(
-                color: FlutterFlowTheme.of(context).accent2,
-              ),
-              borderRadius: BorderRadius.circular(24.0),
-            ),
-          ),
-          FFButtonWidget(
-            onPressed: () async {
-              await launchURL(
-                  'https://app.websitepolicies.com/policies/view/mc5y7e7n');
-            },
-            text: 'Terms and Conditions',
-            options: FFButtonOptions(
-              width: 300.0,
-              height: 40.0,
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: FlutterFlowTheme.of(context).tertiary,
-              textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                    font: GoogleFonts.poppins(
-                      fontWeight:
-                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                    ),
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    letterSpacing: 0.0,
-                    fontWeight:
-                        FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                  ),
-              elevation: 0.0,
-              borderSide: BorderSide(
-                color: FlutterFlowTheme.of(context).accent2,
-              ),
-              borderRadius: BorderRadius.circular(24.0),
-            ),
-          ),
-          Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: FFButtonWidget(
+            FFButtonWidget(
               onPressed: () async {
                 await launchURL(
-                    'https://app.websitepolicies.com/policies/view/zxizmwqq');
+                    'mailto:info@gazingbo.com?subject=Better%20Sleep%20-%20Calm%20Kids%20Support%20Request');
               },
-              text: 'Privacy Policy',
+              text: 'Contact Us',
               options: FFButtonOptions(
                 width: 300.0,
                 height: 40.0,
@@ -319,8 +255,87 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                 borderRadius: BorderRadius.circular(24.0),
               ),
             ),
-          ),
-        ],
+            FFButtonWidget(
+              onPressed: () async {
+                await launchURL(
+                    'https://app.websitepolicies.com/policies/view/mc5y7e7n');
+              },
+              text: 'Terms and Conditions',
+              options: FFButtonOptions(
+                width: 300.0,
+                height: 40.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).tertiary,
+                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                      font: GoogleFonts.poppins(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                    ),
+                elevation: 0.0,
+                borderSide: BorderSide(
+                  color: FlutterFlowTheme.of(context).accent2,
+                ),
+                borderRadius: BorderRadius.circular(24.0),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await launchURL(
+                      'https://app.websitepolicies.com/policies/view/zxizmwqq');
+                },
+                text: 'Privacy Policy',
+                options: FFButtonOptions(
+                  width: 300.0,
+                  height: 40.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                        font: GoogleFonts.poppins(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                  elevation: 0.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).accent2,
+                  ),
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
+              ),
+            ),
+            Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -167,12 +167,13 @@ class _GettingStarted8WidgetState extends State<GettingStarted8Widget> {
               Flexible(
                 child: Container(
                   width: 200.0,
+                  height: 208.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: FlutterFlowVideoPlayer(
                     path:
-                        'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/ball%20video.mp4?alt=media&token=d3b4862e-fbde-4c71-9711-4bc1a2df159c',
+                        'https://sleep-app-4ec19.web.app/videos/ball%20video.mp4',
                     videoType: VideoType.network,
                     autoPlay: true,
                     looping: true,
