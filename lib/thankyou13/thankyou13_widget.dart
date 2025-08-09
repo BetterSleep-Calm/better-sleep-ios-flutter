@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:share_plus/share_plus.dart';
 import 'thankyou13_model.dart';
 export 'thankyou13_model.dart';
 
@@ -152,50 +151,42 @@ class _Thankyou13WidgetState extends State<Thankyou13Widget> {
                 ),
               ),
             ),
-            Builder(
-              builder: (context) => Padding(
-                padding: EdgeInsets.all(24.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    await Share.share(
-                      'https://www.apple.com/au/app-store/',
-                      sharePositionOrigin: getWidgetBoundingBox(context),
-                    );
-                  },
-                  text: 'Leave a Review',
-                  options: FFButtonOptions(
-                    width: 300.0,
-                    height: 50.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle:
-                        FlutterFlowTheme.of(context).titleMedium.override(
-                              font: GoogleFonts.poppins(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontStyle,
-                              ),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).accent2,
-                    ),
-                    borderRadius: BorderRadius.circular(24.0),
+            Padding(
+              padding: EdgeInsets.all(24.0),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await launchURL(
+                      'https://apps.apple.com/us/app/better-sleep-calm-kids/id6747970716?platform=iphone');
+                },
+                text: 'Leave a Review',
+                options: FFButtonOptions(
+                  width: 300.0,
+                  height: 50.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                        font: GoogleFonts.poppins(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).tertiary,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                  elevation: 0.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).accent2,
                   ),
+                  borderRadius: BorderRadius.circular(24.0),
                 ),
               ),
             ),

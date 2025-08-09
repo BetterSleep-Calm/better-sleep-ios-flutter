@@ -970,93 +970,107 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                         ),
                       ],
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 5.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'How to use Better \nSleep for Kids',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineLarge
-                                  .override(
-                                    font: GoogleFonts.playfairDisplay(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'How to use \nBetter Sleep \n- Calm Kids',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineLarge
-                                  .override(
-                                    font: GoogleFonts.playfairDisplay(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineLarge
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          child: Container(
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 5.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                             ),
-                            child: RichText(
-                              textScaler: MediaQuery.of(context).textScaler,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '\nSettle your child into bed.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.poppins(
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'How to use Better \nSleep for Kids',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      font: GoogleFonts.playfairDisplay(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontStyle,
+                                      ),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'How to use \nBetter Sleep ',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      font: GoogleFonts.playfairDisplay(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontStyle,
+                                      ),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '\nSettle your child into bed.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
@@ -1066,24 +1080,24 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                     .bodyLarge
                                                     .fontStyle,
                                           ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        '\n\nPress Play and adjust \nvolume to a comfortable level. ',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.poppins(
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          '\n\nPress Play and adjust \nvolume to a comfortable level. ',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
@@ -1093,24 +1107,24 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                     .bodyLarge
                                                     .fontStyle,
                                           ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        '\n\nHave your child close their eyes \nand concentrate on the voice.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.poppins(
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          '\n\nHave your child close their eyes \nand concentrate on the voice.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
@@ -1120,45 +1134,45 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                     .bodyLarge
                                                     .fontStyle,
                                           ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        '\n\nAs each word is spoken, \nencourage them to picture \nthe object in their mind—if they \nhear the word “ball,” they should \nimagine what a ball looks like.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.poppins(
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          '\n\nAs each word is spoken, \nencourage them to picture \nthe object in their mind—if they \nhear the word “ball,” they should \nimagine what a ball looks like.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
                                                     .fontWeight,
                                             fontStyle: FontStyle.italic,
                                           ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle: FontStyle.italic,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        '\n\nThe gentle stream of words \nhelps shift their brain into \na sleep-ready state.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          font: GoogleFonts.poppins(
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          '\n\nThe gentle stream of words \nhelps shift their brain into \na sleep-ready state.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
@@ -1168,43 +1182,38 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                     .bodyLarge
                                                     .fontStyle,
                                           ),
-                                          letterSpacing: 0.0,
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyLarge
+                                                  .bodyMedium
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyLarge
+                                                  .bodyMedium
                                                   .fontStyle,
                                         ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.poppins(
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontStyle,
+                                        lineHeight: 1.2,
                                       ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -1212,7 +1221,7 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
               Align(
                 alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: EdgeInsets.all(100.0),
                   child: smooth_page_indicator.SmoothPageIndicator(
                     controller: _model.pageViewController ??=
                         PageController(initialPage: 0),

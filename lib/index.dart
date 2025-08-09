@@ -24,5 +24,3 @@ export '/welcome1/welcome1_widget.dart' show Welcome1Widget;
 export '/countdown11_master/countdown11_master_widget.dart'
     show Countdown11MasterWidget;
 export '/info_screen/info_screen_widget.dart' show InfoScreenWidget;
-export '/countdown11_t_e_s_t/countdown11_t_e_s_t_widget.dart'
-    show Countdown11TESTWidget;

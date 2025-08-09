@@ -95,7 +95,6 @@ class _Countdown11WidgetState extends State<Countdown11Widget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xEB5CE1E6),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -134,7 +133,7 @@ class _Countdown11WidgetState extends State<Countdown11Widget> {
                 alignment: AlignmentDirectional(0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
@@ -301,7 +300,7 @@ class _Countdown11WidgetState extends State<Countdown11Widget> {
                     ),
                     Container(
                       width: 100.0,
-                      height: 138.11,
+                      height: 46.55,
                       decoration: BoxDecoration(),
                     ),
                     FFButtonWidget(

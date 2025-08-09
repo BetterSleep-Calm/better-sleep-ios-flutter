@@ -7,6 +7,8 @@
     <string>BetterSleep</string>
 
     <!-- ✅ Orientation -->
+git status
+
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
@@ -40,5 +42,16 @@
     <!-- 🔄 FlutterFlow/Firebase keys go here -->
     <!-- Paste from FlutterFlow export if needed -->
 </dict>
-</plist>
+</plist>nano ios/Runner/Info.plist
+
+
+nano ios/Runner/Info.plist
+
+
+
+
+
+git add ios/Runner/Info.plist
+git commit -m "Resolved Info.plist conflict, kept custom edits"
+git push origin main
 

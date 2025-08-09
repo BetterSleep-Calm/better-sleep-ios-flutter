@@ -167,12 +167,13 @@ class _GettingStarted10WidgetState extends State<GettingStarted10Widget> {
               ),
               Container(
                 width: 280.0,
+                height: 280.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: FlutterFlowVideoPlayer(
                   path:
-                      'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/mansleeping.m4v?alt=media&token=e0744280-f26b-4f82-a4fc-09fabbeb62ad',
+                      'https://sleep-app-4ec19.web.app/videos/sleeping%20video.mp4',
                   videoType: VideoType.network,
                   autoPlay: true,
                   looping: true,

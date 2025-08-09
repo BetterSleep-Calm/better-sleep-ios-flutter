@@ -165,12 +165,13 @@ class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
               ),
               Container(
                 width: 250.0,
+                height: 250.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: FlutterFlowVideoPlayer(
                   path:
-                      'https://firebasestorage.googleapis.com/v0/b/sleep-app-4ec19.firebasestorage.app/o/Kidasleep.m4v?alt=media&token=6ab798f8-b5f6-450c-9738-739b85f887f6',
+                      'https://sleep-app-4ec19.web.app/videos/kidasleepvideo.mp4',
                   videoType: VideoType.network,
                   autoPlay: true,
                   looping: true,
