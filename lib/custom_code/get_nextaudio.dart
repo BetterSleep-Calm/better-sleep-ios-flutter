@@ -23,10 +23,15 @@ import '/flutter_flow/uploaded_file.dart';
 import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-int getNextIndex(int currentIndex) {
+import 'dart:convert';
+
+String generateUUID() {
   /// MODIFY CODE ONLY BELOW THIS LINE
 
-  return (currentIndex + 1) % 3;
+  final now = DateTime.now();
+  final timestampHex = now.millisecondsSinceEpoch.toRadixString(16);
+  final microHex = now.microsecond.toRadixString(16).padLeft(4, '0');
+  return 'uuid-$timestampHex-$microHex';
 
   /// MODIFY CODE ONLY ABOVE THIS LINE
 }

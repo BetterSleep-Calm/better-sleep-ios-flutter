@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -186,16 +187,20 @@ class _GettingStarted10WidgetState extends State<GettingStarted10Widget> {
                 padding: EdgeInsets.all(24.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(
-                      Countdown11Widget.routeName,
-                      extra: <String, dynamic>{
-                        kTransitionInfoKey: TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.fade,
-                          duration: Duration(milliseconds: 0),
-                        ),
-                      },
-                    );
+                    if (revenue_cat.activeEntitlementIds
+                        .contains('LifetimeAccess2')) {
+                      context.pushNamed(Countdown11Widget.routeName);
+
+                      FFAppState().hasLifetimeAccess2 = true;
+                      safeSetState(() {});
+                    } else {
+                      final isEntitled =
+                          await revenue_cat.isEntitled('ofrng78d9289ea0') ??
+                              false;
+                      if (!isEntitled) {
+                        await revenue_cat.loadOfferings();
+                      }
+                    }
                   },
                   text: 'Let\'s go!',
                   options: FFButtonOptions(

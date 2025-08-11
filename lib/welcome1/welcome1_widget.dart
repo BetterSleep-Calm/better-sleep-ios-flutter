@@ -3,7 +3,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'welcome1_model.dart';
 export 'welcome1_model.dart';
 
@@ -26,6 +28,14 @@ class _Welcome1WidgetState extends State<Welcome1Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Welcome1Model());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().localUserID == '') {
+        FFAppState().localUserID = '0';
+        safeSetState(() {});
+      }
+    });
   }
 
   @override
@@ -37,6 +47,8 @@ class _Welcome1WidgetState extends State<Welcome1Widget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
