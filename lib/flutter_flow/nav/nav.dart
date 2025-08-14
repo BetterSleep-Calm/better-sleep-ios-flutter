@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -105,9 +107,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => GettingStarted9Widget(),
         ),
         FFRoute(
-          name: GettingStarted10Widget.routeName,
-          path: GettingStarted10Widget.routePath,
-          builder: (context, params) => GettingStarted10Widget(),
+          name: GettingStarted10PaywallGateWidget.routeName,
+          path: GettingStarted10PaywallGateWidget.routePath,
+          builder: (context, params) => GettingStarted10PaywallGateWidget(),
         ),
         FFRoute(
           name: Evidence4Widget.routeName,
@@ -174,6 +176,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'InfoScreen')
               : InfoScreenWidget(),
+        ),
+        FFRoute(
+          name: GettingStarted10PaywallGateCopyWidget.routeName,
+          path: GettingStarted10PaywallGateCopyWidget.routePath,
+          builder: (context, params) => GettingStarted10PaywallGateCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -247,6 +254,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -265,6 +273,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }

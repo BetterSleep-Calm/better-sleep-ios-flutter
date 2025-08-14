@@ -11,8 +11,8 @@ export '/getting_started8/getting_started8_widget.dart'
     show GettingStarted8Widget;
 export '/getting_started9/getting_started9_widget.dart'
     show GettingStarted9Widget;
-export '/getting_started10/getting_started10_widget.dart'
-    show GettingStarted10Widget;
+export '/getting_started10_paywall_gate/getting_started10_paywall_gate_widget.dart'
+    show GettingStarted10PaywallGateWidget;
 export '/evidence4/evidence4_widget.dart' show Evidence4Widget;
 export '/getting_started5/getting_started5_widget.dart'
     show GettingStarted5Widget;
@@ -24,3 +24,5 @@ export '/welcome1/welcome1_widget.dart' show Welcome1Widget;
 export '/countdown11_master/countdown11_master_widget.dart'
     show Countdown11MasterWidget;
 export '/info_screen/info_screen_widget.dart' show InfoScreenWidget;
+export '/getting_started10_paywall_gate_copy/getting_started10_paywall_gate_copy_widget.dart'
+    show GettingStarted10PaywallGateCopyWidget;
