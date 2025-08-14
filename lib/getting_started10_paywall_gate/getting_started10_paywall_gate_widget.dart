@@ -7,28 +7,30 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'getting_started10_model.dart';
-export 'getting_started10_model.dart';
+import 'getting_started10_paywall_gate_model.dart';
+export 'getting_started10_paywall_gate_model.dart';
 
-class GettingStarted10Widget extends StatefulWidget {
-  const GettingStarted10Widget({super.key});
+class GettingStarted10PaywallGateWidget extends StatefulWidget {
+  const GettingStarted10PaywallGateWidget({super.key});
 
-  static String routeName = 'GettingStarted10';
-  static String routePath = '/gettingStarted10';
+  static String routeName = 'GettingStarted10PaywallGate';
+  static String routePath = '/gettingStarted10PaywallGate';
 
   @override
-  State<GettingStarted10Widget> createState() => _GettingStarted10WidgetState();
+  State<GettingStarted10PaywallGateWidget> createState() =>
+      _GettingStarted10PaywallGateWidgetState();
 }
 
-class _GettingStarted10WidgetState extends State<GettingStarted10Widget> {
-  late GettingStarted10Model _model;
+class _GettingStarted10PaywallGateWidgetState
+    extends State<GettingStarted10PaywallGateWidget> {
+  late GettingStarted10PaywallGateModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GettingStarted10Model());
+    _model = createModel(context, () => GettingStarted10PaywallGateModel());
   }
 
   @override
@@ -188,14 +190,14 @@ class _GettingStarted10WidgetState extends State<GettingStarted10Widget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (revenue_cat.activeEntitlementIds
-                        .contains('LifetimeAccess2')) {
+                        .contains('Better Sleep App')) {
                       context.pushNamed(Countdown11Widget.routeName);
 
                       FFAppState().hasLifetimeAccess2 = true;
                       safeSetState(() {});
                     } else {
                       final isEntitled =
-                          await revenue_cat.isEntitled('ofrng78d9289ea0') ??
+                          await revenue_cat.isEntitled('Better Sleep App') ??
                               false;
                       if (!isEntitled) {
                         await revenue_cat.loadOfferings();

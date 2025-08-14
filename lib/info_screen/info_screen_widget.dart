@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -118,6 +119,7 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 0.0),
@@ -366,6 +368,7 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                               ),
                             ),
                           ),
+                          Spacer(),
                         ],
                       ),
                     ),
@@ -583,6 +586,36 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1,2',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodySmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .fontStyle,
+                                                ),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -705,31 +738,35 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                                 .bodyMedium
                                                                 .fontStyle,
                                                       ),
+                                            ),
+                                            TextSpan(
+                                              text: ' 3',
+                                              style: TextStyle(),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .bodySmall
                                               .override(
                                                 font: GoogleFonts.poppins(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodySmall
                                                           .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodySmall
                                                           .fontStyle,
                                                 ),
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodySmall
                                                         .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodySmall
                                                         .fontStyle,
                                               ),
                                         ),
@@ -801,7 +838,7 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                       ),
                                       TextSpan(
                                         text:
-                                            '\nAct on the brain similarly to MSG. Look for aspartame (951), sucralose (955), saccharin (954), and acesulfame potassium (950). Commonly found in sugar-free yoghurts, diet soft drinks, flavoured waters, chewing gum, and some \"no added sugar\" kids\' snacks.',
+                                            ' Break down into compounds that can overstimulate neurons  and affect neurotransmitter balance in sensitive individuals. Look for aspartame (951), sucralose (955), saccharin (954), and acesulfame potassium (950). Commonly found in sugar-free yoghurts, diet soft drinks, flavoured waters, chewing gum, and some \"no added sugar\" kids\' snacks.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -819,29 +856,33 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
+                                      ),
+                                      TextSpan(
+                                        text: ' 4, 5 ',
+                                        style: TextStyle(),
                                       )
                                     ],
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodySmall
                                         .override(
                                           font: GoogleFonts.poppins(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodySmall
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodySmall
                                                     .fontStyle,
                                           ),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodySmall
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodySmall
                                                   .fontStyle,
                                         ),
                                   ),
@@ -920,29 +961,33 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
+                                        ),
+                                        TextSpan(
+                                          text: ' 6',
+                                          style: TextStyle(),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .labelSmall
                                           .override(
                                             font: GoogleFonts.poppins(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .labelSmall
                                                       .fontWeight,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .labelSmall
                                                       .fontStyle,
                                             ),
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .labelSmall
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .labelSmall
                                                     .fontStyle,
                                           ),
                                     ),
@@ -981,34 +1026,6 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                            ),
-                            child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Text(
-                                'How to use Better \nSleep for Kids',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineLarge
-                                    .override(
-                                      font: GoogleFonts.playfairDisplay(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineLarge
-                                            .fontStyle,
-                                      ),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .fontStyle,
-                                    ),
-                              ),
                             ),
                           ),
                           Container(
@@ -1215,6 +1232,335 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                         ],
                       ),
                     ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Flexible(
+                          child: Container(
+                            width: double.infinity,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'References',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      font: GoogleFonts.playfairDisplay(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  await launchURL(
+                                      'https://www.sleephealthfoundation.org.au/sleep-topics/caffeine-and-sleep');
+                                },
+                                text: '1. Sleep Health Foundation',
+                                options: FFButtonOptions(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color: Color(0x5457636C),
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    'https://mana.md/sugar-and-sleep/');
+                              },
+                              text: '2. Mana Medical Associates',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x5457636C),
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    'https://www.thefoodintolerancedietitian.com.au/copy-of-amines');
+                              },
+                              text: '3. The Food Intolerance Dietitian',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x5457636C),
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    'https://www.nature.com/articles/1602866');
+                              },
+                              text: '4. European Journal of Clinical Nutrition',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x5457636C),
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    'https://www.researchgate.net/profile/Arbind-Choudhary/publication/313787534_Neurophysiological_symptoms_and_aspartame_What_is_the_connection/links/5a03e450a6fdcc1c2f58f763/Neurophysiological-symptoms-and-aspartame-What-is-the-connection.pdf?utm_source=chatgpt.com');
+                              },
+                              text: '5. ResearchGate',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x5457636C),
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    'https://www.australianallergycentre.com.au/salicylate-sensitivity/');
+                              },
+                              text: '6. Australian Allergy Centre',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Color(0x5457636C),
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Spacer(),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -1225,7 +1571,7 @@ class _InfoScreenWidgetState extends State<InfoScreenWidget> {
                   child: smooth_page_indicator.SmoothPageIndicator(
                     controller: _model.pageViewController ??=
                         PageController(initialPage: 0),
-                    count: 4,
+                    count: 5,
                     axisDirection: Axis.horizontal,
                     onDotClicked: (i) async {
                       await _model.pageViewController!.animateToPage(

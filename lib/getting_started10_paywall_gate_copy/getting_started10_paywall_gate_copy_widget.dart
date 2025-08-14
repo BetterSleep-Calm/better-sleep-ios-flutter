@@ -6,28 +6,30 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'getting_started9_model.dart';
-export 'getting_started9_model.dart';
+import 'getting_started10_paywall_gate_copy_model.dart';
+export 'getting_started10_paywall_gate_copy_model.dart';
 
-class GettingStarted9Widget extends StatefulWidget {
-  const GettingStarted9Widget({super.key});
+class GettingStarted10PaywallGateCopyWidget extends StatefulWidget {
+  const GettingStarted10PaywallGateCopyWidget({super.key});
 
-  static String routeName = 'GettingStarted9';
-  static String routePath = '/gettingStarted9';
+  static String routeName = 'GettingStarted10PaywallGateCopy';
+  static String routePath = '/gettingStarted10PaywallGateCopy';
 
   @override
-  State<GettingStarted9Widget> createState() => _GettingStarted9WidgetState();
+  State<GettingStarted10PaywallGateCopyWidget> createState() =>
+      _GettingStarted10PaywallGateCopyWidgetState();
 }
 
-class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
-  late GettingStarted9Model _model;
+class _GettingStarted10PaywallGateCopyWidgetState
+    extends State<GettingStarted10PaywallGateCopyWidget> {
+  late GettingStarted10PaywallGateCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GettingStarted9Model());
+    _model = createModel(context, () => GettingStarted10PaywallGateCopyModel());
   }
 
   @override
@@ -84,7 +86,7 @@ class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
                   ),
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: LinearPercentIndicator(
-                    percent: 0.88,
+                    percent: 1.0,
                     width: 300.0,
                     lineHeight: 12.0,
                     animation: true,
@@ -96,50 +98,52 @@ class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
                   ),
                 ),
               ),
-              Container(
-                width: 200.0,
-                height: 200.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    '5',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          font: GoogleFonts.playfairDisplay(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .headlineLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .headlineLarge
-                                .fontStyle,
-                          ),
-                          fontSize: 70.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .headlineLarge
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .headlineLarge
-                              .fontStyle,
-                        ),
+              Flexible(
+                child: Container(
+                  width: 200.0,
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      '6',
+                      textAlign: TextAlign.center,
+                      style:
+                          FlutterFlowTheme.of(context).headlineLarge.override(
+                                font: GoogleFonts.playfairDisplay(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
+                                fontSize: 60.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontStyle,
+                              ),
+                    ),
                   ),
                 ),
               ),
               Flexible(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Align(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
-                        'The gentle stream of words \nhelps shift their brain into \na sleep-ready state.',
+                        'Be warned though—\nit works on adults too!',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               font: GoogleFonts.poppins(
@@ -164,14 +168,14 @@ class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
                 ),
               ),
               Container(
-                width: 250.0,
-                height: 250.0,
+                width: 280.0,
+                height: 280.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: FlutterFlowVideoPlayer(
                   path:
-                      'https://sleep-app-4ec19.web.app/videos/kidasleepvideo.mp4',
+                      'https://sleep-app-4ec19.web.app/videos/sleeping%20video.mp4',
                   videoType: VideoType.network,
                   autoPlay: true,
                   looping: true,
@@ -195,7 +199,7 @@ class _GettingStarted9WidgetState extends State<GettingStarted9Widget> {
                       },
                     );
                   },
-                  text: 'Next',
+                  text: 'Let\'s go!',
                   options: FFButtonOptions(
                     width: 300.0,
                     height: 50.0,
