@@ -1,0 +1,51 @@
+name: Build & Upload iOS App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-upload:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+
+      - name: Install Fastlane
+        run: gem install fastlane
+
+      - name: Build IPA
+        run: |
+          mkdir -p build
+          xcodebuild clean archive \
+            -workspace ios/Runner.xcworkspace \
+            -scheme Runner \
+            -configuration Release \
+            -archivePath ${{ github.workspace }}/build/Runner.xcarchive
+
+          xcodebuild -exportArchive \
+            -archivePath ${{ github.workspace }}/build/Runner.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath ${{ github.workspace }}/build
+
+      - name: Upload to App Store
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
+          APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
+          APP_STORE_CONNECT_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
+          APP_STORE_TEAM_ID: ${{ secrets.APP_STORE_TEAM_ID }}
+        run: |
+          fastlane pilot upload \
+            --username $APPLE_ID \
+            --app_identifier $APP_IDENTIFIER \
+            --team_id $APP_STORE_TEAM_ID \
+            --ipa ${{ github.workspace }}/build/Runner.ipa \
+            --changelog "Issue addressed: added citations to Page 4 of Info screen as requested. Also added a fix to ensure audio track plays in background when phone screen times out."
