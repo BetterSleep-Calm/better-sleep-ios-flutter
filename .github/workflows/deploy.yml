@@ -10,9 +10,21 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      # 1️⃣ Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Set up Flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 4️⃣ Setup Ruby & Fastlane
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -21,31 +33,35 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane
 
+      # 5️⃣ Build iOS IPA
       - name: Build IPA
         run: |
+          flutter build ios --release --no-codesign
           mkdir -p build
           xcodebuild clean archive \
             -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
-            -archivePath ${{ github.workspace }}/build/Runner.xcarchive
+            -archivePath ${{ github.workspace }}/build/Runner.xcarchive \
+            -allowProvisioningUpdates
 
           xcodebuild -exportArchive \
             -archivePath ${{ github.workspace }}/build/Runner.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath ${{ github.workspace }}/build
+            -exportOptionsPlist ios/exportOptions.plist \
+            -exportPath ${{ github.workspace }}/build \
+            -allowProvisioningUpdates
 
+      # 6️⃣ Upload to App Store using Fastlane
       - name: Upload to App Store
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
-          APP_STORE_CONNECT_USERNAME: ${{ secrets.APP_STORE_CONNECT_USERNAME }}
-          APP_STORE_CONNECT_PASSWORD: ${{ secrets.APP_STORE_CONNECT_PASSWORD }}
           APP_STORE_TEAM_ID: ${{ secrets.APP_STORE_TEAM_ID }}
+          FASTLANE_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
         run: |
           fastlane pilot upload \
             --username $APPLE_ID \
             --app_identifier $APP_IDENTIFIER \
             --team_id $APP_STORE_TEAM_ID \
             --ipa ${{ github.workspace }}/build/Runner.ipa \
-            --changelog "Issue addressed: added citations to Page 4 of Info screen as requested. Also added a fix to ensure audio track plays in background when phone screen times out."
+            --changelog "Issue addressed: added citations to Page 4 of Info screen and ensured audio plays in background when screen times out."
