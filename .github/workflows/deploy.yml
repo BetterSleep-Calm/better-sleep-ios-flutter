@@ -36,7 +36,7 @@ jobs:
       # 5️⃣ Build iOS IPA
       - name: Build IPA
         run: |
-          flutter build ios --release --no-codesign
+          flutter build ios --release --no-codesign --build-name=1.0.3 --build-number=3
           mkdir -p build
           xcodebuild clean archive \
             -workspace ios/Runner.xcworkspace \
