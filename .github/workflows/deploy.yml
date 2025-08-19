@@ -1,6 +1,4 @@
-# rebuild trigger - temporary
-
-name: Build & Upload iOS App
+name: iOS Build & Upload
 
 on:
   push:
@@ -12,21 +10,27 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      # 1️⃣ Checkout code
+      # 🧾 1️⃣ Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up Flutter
+      # 🛠️ 2️⃣ Set up Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.32.8'
 
-      # 3️⃣ Install dependencies
+      # 🧹 3️⃣ Clean and install dependencies
+      - name: Clean Flutter build
+        run: flutter clean
+
       - name: Install dependencies
         run: flutter pub get
 
-      # 4️⃣ Setup Ruby & Fastlane
+      - name: Log font_awesome_flutter version
+        run: grep font_awesome_flutter pubspec.lock || echo "font_awesome_flutter not found"
+
+      # 💎 4️⃣ Setup Ruby & Fastlane
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -35,26 +39,15 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane
 
-      # 5️⃣ Build iOS IPA
+      # 📦 5️⃣ Build iOS IPA
       - name: Build IPA
-        run: |
-          flutter build ios --release --no-codesign --build-name=1.0.3 --build-number=3
-          mkdir -p build
-          xcodebuild clean archive \
-            -workspace ios/Runner.xcworkspace \
-            -scheme Runner \
-            -configuration Release \
-            -archivePath ${{ github.workspace }}/build/Runner.xcarchive \
-            -allowProvisioningUpdates
+        run: flutter build ipa --release --build-name=1.0.3 --build-number=3
 
-          xcodebuild -exportArchive \
-            -archivePath ${{ github.workspace }}/build/Runner.xcarchive \
-            -exportOptionsPlist ios/exportOptions.plist \
-            -exportPath ${{ github.workspace }}/build \
-            -allowProvisioningUpdates
+      - name: Verify IPA output
+        run: ls -lh build/ios/ipa
 
-      # 6️⃣ Upload to App Store using Fastlane
-      - name: Upload to App Store
+      # 🚀 6️⃣ Upload to TestFlight using Fastlane
+      - name: Upload to TestFlight
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
@@ -62,8 +55,10 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
         run: |
           fastlane pilot upload \
-            --username $APPLE_ID \
-            --app_identifier $APP_IDENTIFIER \
-            --team_id $APP_STORE_TEAM_ID \
-            --ipa ${{ github.workspace }}/build/Runner.ipa \
+            --username "$APPLE_ID" \
+            --app_identifier "$APP_IDENTIFIER" \
+            --team_id "$APP_STORE_TEAM_ID" \
+            --ipa build/ios/ipa/Runner.ipa \
             --changelog "Issue addressed: added citations to Page 4 of Info screen and ensured audio plays in background when screen times out."
+
+
