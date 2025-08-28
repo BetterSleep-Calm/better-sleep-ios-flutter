@@ -1,27 +1,26 @@
-name: Build and Upload iOS App to TestFlight
+name: iOS Build & Upload
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build-and-upload:
     runs-on: macos-latest
 
     steps:
-      # 1️⃣ Checkout repository
-      - name: Checkout code
-        uses: actions/checkout@v4
+      # 🧾 1️⃣ Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # 2️⃣ Set up Flutter
+      # 🛠️ 2️⃣ Set up Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.32.8'
 
-      # 3️⃣ Clean and install dependencies
+      # 🧹 3️⃣ Clean and install dependencies
       - name: Clean Flutter build
         run: flutter clean
 
@@ -31,7 +30,30 @@ jobs:
       - name: Log font_awesome_flutter version
         run: grep font_awesome_flutter pubspec.lock || echo "font_awesome_flutter not found"
 
-      # 4️⃣ Set up Ruby & Fastlane
+      # 🔐 4️⃣ Create and unlock temporary keychain, import certificate
+      - name: Install signing certificate
+        run: |
+          echo "${{ secrets.P12_BASE64 }}" | base64 --decode > certificate.p12
+
+          security create-keychain -p "buildpass" build.keychain
+          security unlock-keychain -p "buildpass" build.keychain
+          security set-keychain-settings -t 3600 -l ~/Library/Keychains/build.keychain
+          security list-keychains -s ~/Library/Keychains/build.keychain
+
+          security import certificate.p12 \
+            -k ~/Library/Keychains/build.keychain \
+            -P "" \
+            -T /usr/bin/codesign
+
+          security set-key-partition-list -S apple-tool:,apple: -k "buildpass" ~/Library/Keychains/build.keychain
+
+      # 📄 5️⃣ Install provisioning profile
+      - name: Install provisioning profile
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+      # 💎 6️⃣ Setup Ruby & Fastlane
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -40,19 +62,25 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane
 
-      # 5️⃣ Decode and install signing certificate
-      - name: Install signing certificate
-        run: |
-          echo "${{ secrets.P12_BASE64 }}" | base64 --decode > ios_distribution.p12
-          security create-keychain -p "" build.keychain
-          security default-keychain -s build.keychain
-          security unlock-keychain -p "" build.keychain
-          security import ios_distribution.p12 -k build.keychain -P "${{ secrets.P12_PASSWORD }}" -A
-          security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
+      # 📦 7️⃣ Build iOS IPA
+      - name: Build IPA
+        run: flutter build ipa --release --build-name=1.0.3 --build-number=4
 
-      # 6️⃣ Install provisioning profile
-      - name: Install provisioning profile
+      - name: Verify IPA output
+        run: ls -lh build/ios/ipa
+
+      # 🚀 8️⃣ Upload to TestFlight using Fastlane
+      - name: Upload to TestFlight
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
+          APP_STORE_TEAM_ID: ${{ secrets.APP_STORE_TEAM_ID }}
+          FASTLANE_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
         run: |
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/M
+          fastlane pilot upload \
+            --username "$APPLE_ID" \
+            --app_identifier "$APP_IDENTIFIER" \
+            --team_id "$APP_STORE_TEAM_ID" \
+            --ipa build/ios/ipa/Runner.ipa \
+            --changelog "Issue addressed: added citations to Page 4 of Info screen and ensured audio plays in background when screen times out."
 
